@@ -14,3 +14,5 @@ fs.writeFile(
     console.log('The config file was succesfully created!');
   }
 );
+
+fs.mkdirSync(path.join(__dirname, '../public/images'));
