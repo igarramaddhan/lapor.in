@@ -15,4 +15,5 @@ fs.writeFile(
   }
 );
 
+fs.mkdirSync(path.join(__dirname, '../public'));
 fs.mkdirSync(path.join(__dirname, '../public/images'));
