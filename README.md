@@ -14,7 +14,7 @@ yarn
 
 Create `.env` in root folder
 ```
-NODE_ENV=development
+MODE=development
 PORT=7000
 
 DB_DIALECT=mysql
