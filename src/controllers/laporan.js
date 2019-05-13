@@ -4,14 +4,15 @@ const { Sequelize, sequelize, Laporan, User } = DB;
 
 async function create(req, res) {
   try {
-    const { description, longitude, latitude } = req.body;
+    const { description, longitude, latitude, district } = req.body;
     const auth = req.auth;
 
     const laporan = await Laporan.create({
       description,
       longitude,
       latitude,
-      status: 'pending',
+      district,
+      status: 'Pending',
       image: `${req.headers.host}/images/${req.file.filename}`,
       userId: auth.id
     });
@@ -25,7 +26,13 @@ async function create(req, res) {
 
 async function getAll(req, res) {
   try {
+    const { district } = req.query;
+
+    const options = {};
+    if (district) options.where = { district };
+
     const laporan = await Laporan.findAll({
+      ...options,
       order: [['createdAt', 'DESC']],
       attributes: {
         exclude: ['userId']

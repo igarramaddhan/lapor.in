@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes) => {
       longitude: { type: DataTypes.STRING, allowNull: false },
       latitude: { type: DataTypes.STRING, allowNull: false },
       status: { type: DataTypes.STRING, allowNull: false },
-      image: { type: DataTypes.STRING, allowNull: false }
+      image: { type: DataTypes.STRING, allowNull: false },
+      district: { type: DataTypes.STRING, allowNull: false }
     },
     {}
   );
